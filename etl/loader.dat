@@ -1,0 +1,11 @@
+load data
+INFILE '/home/oracle/Downloads/ml-20m/ratings.csv'
+INTO TABLE cinema
+APPEND
+FIELDS TERMINATED BY ','
+trailing nullcols
+(id SEQUENCE (MAX,1),
+ user_id CHAR(30),
+ movie_id CHAR(30),
+ rating   decimal external,
+ timestamp  char(256))
